@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="CSS/baseStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/mainStyle.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="JS/script.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+
+    <title>
+        World Scope
+    </title>
+
+
+</head>
+
+<body onload="showMap(); showPhotoMarker();">
+
+<div id="wrapper">
+
+    <div id="header">
+        <button id="homeButton" onclick="returnIndexPage();">Home</button>
+        World Scope
+        <span> - browse cities in the world for your next trip</span>
+    </div>
+
+    <div id="main">
+        <div id="map"></div>
+
+        <div id="search">
+            <p id="searchTitle">Search for a city here:</p>
+
+            <form name="searchForm" onsubmit="return (validateSearch(this));" action="/search" method="get">
+                <input type="text" list="cities" name="city" placeholder="Enter a city's name">
+                <datalist id="cities">
+                    {{#each cities}}
+                        <option class="cities" crd="{{lat}},{{lon}}" value="{{city}}, {{country}}">{{city}}, {{country}}</option>
+                    {{/each}}
+                </datalist>
+
+                <input type="submit" id="searchButton" value="Search">
+            </form>
+            <br><br>
+
+            <div id="result">
+                <fieldset>
+                    <legend id="resultTitle" cityname="{{resultCity}}" country="{{resultCountry}}" lat="{{lat}}" lon="{{lon}}">Photo in {{resultCity}}, {{resultCountry}}</legend>
+                    <p id="tagsTitle" photourl="{{photoUrl}}">Tags of the photo provided by the owner:</p>
+                    <p id="noTag" {{noTag}}>(Oops! The owner didn't make any tag for this photo)</p>
+                    {{#each tags}}
+                        <button class="tagButtons" tag="{{tag}}" onclick="searchTag(this);">{{tag}}</button>
+                    {{/each}}
+                    <br><br>
+                    <p id="cTagsTitle">Tags detected by Clarifai:</p>
+                    {{#each cTags}}
+                        <button class="cTagButtons" tag="{{tag}}" onclick="searchTag(this);">{{tag}}</button>
+                    {{/each}}
+                    <br><br><br>
+                    <span id="tagExplanation">Click on one of the tags above to see more photos about a specific tag, or click here to see more</span>
+                    <button id="similarSearchButton" onclick="searchSimilar();">Similar Photos</button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

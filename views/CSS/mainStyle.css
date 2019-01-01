@@ -1,0 +1,147 @@
+#main {
+	height: 700px;
+	background-color: #E9EBEE;
+	border-left: 1px solid #D2D2D2;
+	border-right: 1px solid #D2D2D2;
+	box-shadow: 0px 0px 100px #D2D2D2;
+}
+
+#map {
+	width: 69%;
+	height: 100%;
+	float: right;
+	padding: 0px;
+	margin: 0px;
+}
+
+#search {
+	max-width: 30%;
+	height: 100%;
+	background-color: #D2D2D2;
+	text-align: center;
+	padding: 10px;
+	font-size: 20pt;
+	overflow: auto;
+}
+
+#searchTitle {
+	font-size: 18pt;
+	font-weight: bold;
+	text-align: left;
+	margin: 0px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#searchFailure {
+	font-size: 15pt;
+	text-align: left;
+	margin: 0px;
+	color: red;
+}
+
+#apiError {
+	font-size: 15pt;
+	text-align: left;
+	margin: 0px;
+	color: red;
+}
+
+#search fieldset {
+	border: 3px solid #E9EBEE;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+
+#search input[list] {
+	width: 70%;
+	height: 20px;
+	font-size: 15pt;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: auto;
+}
+
+#searchButton {
+	color: white;
+	font-size: 16pt;
+	font-weight: bold;
+	padding: 5px 20px;
+	border-radius: 7px;
+	background-color: #31FF98;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#result p {
+	text-align: left;
+	margin: 5px;
+	padding: 0;
+}
+
+.photosBox {
+	width: 45%;
+	margin: 0;
+	padding: 0;
+}
+
+.photosPreview {
+	max-height: 300px;
+	max-width: 300px;
+}
+
+#popupPhoto {
+	max-height: 500px;
+	max-width: 700px;
+}
+
+#tagsTitle {
+	font-size: 15pt;
+}
+
+#cTagsTitle {
+	font-size: 15pt;
+}
+
+#noTag {
+	color: red;
+	font-size: 13pt;
+}
+
+.tagButtons {
+	font-size: 13pt;
+	font-weight: bold;
+	padding: 5px;
+	margin: 10px;
+	border-radius: 7px;
+	background-color: aquamarine;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.cTagButtons {
+    font-size: 13pt;
+    font-weight: bold;
+	padding: 5px;
+	margin: 10px;
+    border-radius: 7px;
+    background-color: #9BFBFF;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#tagExplanation {
+	font-size: 13px;
+	font-style: italic;
+	text-align: left;
+	margin-right: 20px;
+	padding-right: 10px;
+}
+
+#similarSearchButton {
+	color: white;
+	font-size: 14pt;
+	font-weight: bold;
+	font-style: italic;
+	padding: 5px;
+	border-radius: 7px;
+	background-color: #0068DB;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
